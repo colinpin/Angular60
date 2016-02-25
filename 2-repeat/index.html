@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Angular App</title>
+    <meta charset="UTF-8">
+    <title>Angular App</title>
 </head>
+
 <body>
-  
-  <div class="container" ng-init="names=['Scott', 'Dave', 'Collin', 'Sara', 'Igor', 'Kurt', 'Vina', 'Alex', 'Chris']">
-    <h3>Looping with the ng-repeat Directive</h3>
-    <ul>
-      <li ng-repeat="student in names">{{student}}</li>
-    </ul>
-  </div>
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-  <script src="app.js"></script>
+
+    <div class="container" ng-init="names=['Alex', 'Colin', 'Dave', 'Igor', 'Kurt', 'Vina', 'Chris', 'Bart', 'Frank', 'Cam', 'Chauncey', 'Scott', 'Sara']">
+        <h3>Looping with the ng-repeat Directive</h3>
+        <h2 ng-repeat="students in names">Hi there, {{students}}</h2>
+    </div>
+
+    <div>
+        <h3>The smartest student is {{names[7]}}</h3>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="app.js"></script>
 </body>
+
 </html>

@@ -1,13 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Angular App</title>
+    <meta charset="UTF-8">
+    <title>Angular App</title>
+    <style>
+        .oddnumber{
+            background-color: lightseagreen;
+        }
+    </style>
 </head>
+
 <body>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-animate.min.js"></script>
-  <script src="app.js"></script>
+    <div ng-controller="dogController">
+        <input type="text" ng-model="name" /> {{name}}
+        <table>
+            <tr ng-repeat="dog in dogs | filter:name | orderBy:'name'" ng-class-odd="'oddnumber'">
+                <td>{{dog.name | uppercase}}</td>
+                <td>{{dog.type}}</td>
+            </tr>
+        </table>
+        <h2>New Dog</h2> Name:
+        <input type="text" ng-model="newDog.name" />
+        <br/> Type:
+        <input type="text" ng-model="newDog.type" />
+        <br/>
+        <button ng-click="addNewDog()"> Add dog</button>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-animate.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+        var myApp = angular.module('myApp', []);
+        
+        myApp.controller('dogController', function($scope){
+            $scope.dogs = [
+                {name:'tony', type:'Dalmatian'},
+                {name:'ron', type:'Chihuahua'},
+                {name:'tom', type:'bulldog'}
+            ];
+            $scope.addNewDog = function(){
+                $scope.dogs.push(
+                    {       
+                        name: $scope.newDog.name,
+                        type: $scope.newDog.type
+                    })
+            }
+            
+        });
+    </script>
 </body>
+
 </html>
