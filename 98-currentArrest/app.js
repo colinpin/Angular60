@@ -1,5 +1,6 @@
 /*global angular */
 <<<<<<< HEAD
+<<<<<<< HEAD
 //
 var app = angular.module("app", []);
 //
@@ -17,6 +18,8 @@ app.controller("SimpleController", function($scope) {
 //mvvm - model view viewmodel
 
 =======
+=======
+>>>>>>> kenwilcox/master
 var app = angular.module("app", ["ngRoute", "ngAnimate"]);
 
 app.config(function ($routeProvider) {
@@ -64,4 +67,7 @@ app.controller("ArrestController", function ($scope, $http, $routeParams) {
     $scope.search = "";
   }
 });
+<<<<<<< HEAD
+>>>>>>> kenwilcox/master
+=======
 >>>>>>> kenwilcox/master

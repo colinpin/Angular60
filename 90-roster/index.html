@@ -6,26 +6,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Document</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<<<<<<< HEAD
+=======
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+>>>>>>> kenwilcox/master
   <link rel="stylesheet" href="styles/app.css">
 </head>
 
 <body>
   <div class="container-fluid" ng-controller="RosterController">
     <button type="button" class="btn btn-primary" ng-click="loadPlayers()">Load Players</button>
+<<<<<<< HEAD
     <button type="button" class="btn btn-primary" ng-click="setPlayers()">Set Players</button>
+=======
+    <button type="button" class="btn btn-primary" ng-click="setPlayers()" ng-disabled="!hasPlayers()">Set Players</button>
+    <i class="fa fa-spinner fa-pulse fa-2x" ng-show="loadingPlayers()"></i>
+    <p>Players: {{playerCount() | number}}</p>
+    <input type="text" class="form-control" ng-model="search">
+>>>>>>> kenwilcox/master
     
     <div class="panel panel-default roster">
       <div class="panel-heading">My NFL Roster</div>
       <div class="panel-body inline">
 
+<<<<<<< HEAD
         <div class="player-card" ng-repeat="player in players">
           <button type="button" class="btn btn-danger center-block" ng-click="removePlayer($index)">Remove</button>
           <img src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/">
+=======
+        <div class="player-card" ng-repeat="player in players | filter: search">
+          <button type="button" class="btn btn-danger center-block" ng-click="removePlayer($index)">Remove</button>
+          <img kwreplace="{{player.photo}}" src="https://auth.cbssports.com/images/players/unknown-player-170x170.png">
+>>>>>>> kenwilcox/master
           <p>Name: {{player.fullname}}</p>
           <p>Position: {{player.position}}</p>
           <p>Number: {{player.jersey}}</p>
         </div>
+<<<<<<< HEAD
         
+=======
+               
+>>>>>>> kenwilcox/master
         <!-- FORM -->
         <div class="panel panel-primary add-player">
           <div class="panel-heading"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add Player</div>
@@ -63,6 +84,10 @@
   <script src="app/app.js"></script>
   <script src="app/services/data.service.js"></script>
   <script src="app/controller/controller.js"></script>
+<<<<<<< HEAD
+=======
+  <script src="app/directive/kw-replace.js"></script>
+>>>>>>> kenwilcox/master
 </body>
 
 </html>
